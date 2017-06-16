@@ -2,8 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.a
 *.so
 
 # Distribution / packaging
@@ -24,6 +28,16 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.bz2
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -53,6 +67,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+*.sqlite
 
 # Flask stuff:
 instance/
@@ -99,3 +114,17 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.ehthumbs.db
+Thumbs.db
+*~
+*.swp
+old/
+*.old
+*.bak

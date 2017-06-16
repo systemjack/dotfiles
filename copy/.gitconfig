@@ -1,0 +1,21 @@
+[user]
+name = Cristopher Crews
+email = cris.crews@inscape.tv
+
+[core]
+editor = vim
+#autocrlf = input
+#whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+#excludesfile = ~/.gitignore_global
+
+[merge]
+tool = vimdiff
+
+[alias]
+co = checkout
+br = branch
+cm = commit
+st = status
+
+[http]
+postBuffer = 524288000
