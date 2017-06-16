@@ -1,3 +1,4 @@
+#!/bin/bash
 # Ubuntu platform initialization
 
 # abort if not Ubuntu
