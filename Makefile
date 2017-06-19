@@ -18,5 +18,9 @@ endif
 #.PHONY: check STOW-exists linux
 
 common: 
-	stow --no --dir=link --target=$(HOME) --restow common
+	stow --verbose=0 --dir=link --target=$(HOME) --restow common
 .PHONY: common
+
+test: 
+	stow -no --verbose=1 --dir=link --target=$(HOME) --restow common
+.PHONY: test
