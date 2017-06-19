@@ -16,3 +16,7 @@ endif
 #linux: check
 #	@echo stow exists
 #.PHONY: check STOW-exists linux
+
+common: 
+	stow --no --dir=link --target=$(HOME) --restow common
+.PHONY: common
