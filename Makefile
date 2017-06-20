@@ -26,5 +26,7 @@ ifeq ($(OS), Darwin)
 	echo Copy not available on MacOS yet
 else
 	cp --recursive --backup=numbered --update copy/{.[^.],}* $(HOME)
+# TODO gives "find: `copy/*': No such file or directory" if no regular file in copy
+# but otherwise works. 
 endif
 .PHONY: copy

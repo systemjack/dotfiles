@@ -1,0 +1,47 @@
+#!/bin/bash
+# Ubuntu platform initialization
+
+# abort if not Ubuntu
+if ! python -mplatform | grep -qi 'Ubuntu\|Debian'; then 
+	echo WARNING: Aborting Ubuntu platform initialization: wrong OS
+	exit 1 
+fi
+
+# Debian apt-get install function to eliminate prompts and run quietly 
+apt_get_install() {
+  DEBIAN_FRONTEND=noninteractive sudo apt-get -y -o DPkg::Options::=--force-confnew install $@
+}
+
+# Update APT.
+sudo apt-get -qq -y update
+#DEBIAN_FRONTEND=noninteractive sudo apt-get -qq -y -o Dpkg::Options::="--force-confnew" dist-upgrade
+#DEBIAN_FRONTEND=noninteractive sudo apt-get -qq -y -o Dpkg::Options::="--force-confnew" upgrade
+
+# Install APT packages.
+packages="
+	build-essential
+	exuberant-ctags
+	git
+	htop
+	python-dev
+	python-virtualenv
+	python-pip
+"
+# OTHERS TO CONSIDER:
+# ansible id3tool libssl-dev tree libpcre3 libpcre3-dev ntp ntpdate libpq-dev libzmq3-dev sendemail postgresql-client-common redis-tools parallel
+
+apt_get_install $packages
+
+echo $(HOME)
+exit 0
+
+#virtualenv venv
+#cd venv
+#echo complete -C aws_completer aws >> bin/activate
+#source bin/activate
+#pip install pylint pep8 flake8 pytest awscli boto3 pygeoip
+#pip install psycopg2 requests pymysql moto
+#pip install pillow bottle
+
+#sudo pip install setuptools redis sider awscli boto psycopg2
+#sudo pip install pytest bottle pymysql boto boto3 zmq moto
