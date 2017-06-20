@@ -17,10 +17,14 @@ endif
 #	@echo stow exists
 #.PHONY: check STOW-exists linux
 
-common: 
+link: 
 	stow --verbose=0 --dir=link --target=$(HOME) --restow common
-.PHONY: common
+.PHONY: link
 
-test: 
-	stow -no --verbose=1 --dir=link --target=$(HOME) --restow common
-.PHONY: test
+copy:
+ifeq ($(OS), Darwin)
+	echo Copy not available on MacOS yet
+else
+	cp --recursive --backup=numbered --update copy/{.[^.],}* $(HOME)
+endif
+.PHONY: copy
